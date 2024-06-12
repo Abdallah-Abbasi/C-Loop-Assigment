@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 //Question 1
 //A
 /*
@@ -43,3 +46,53 @@ then we take the number and we do the module 10 and / 10 until we make the numbe
 and after having its sum what we do exactly is this
 we check if the sum is also less than 10 if not repeat but if it is then we check if its one or not if false then not magical if true then magical
 */
+
+/* Question 1
+Write a program which reads from a user, a list of positive integers that ends with a sentinel -1.
+The program should examine if the number is an armstrong, magical, or neither.
+In (A) use a function is_armstrong which receives a positive integer n and returns 1
+if n is an armstrong number or 0 otherwise.
+In (B) use a function is_magical which receives a positive integer n and returns 1 if n is a magical number or 0 otherwise.
+*/
+
+
+
+
+//Answer :
+
+
+void is_armstrong (int num);
+void is_magical (int num)
+
+int main () {
+int num;
+while (1){
+    printf("please insert a positive integer or insert -1 if you want to exit : /n");
+    scanf("%d", &num);
+    if (num == -1) {
+        break;
+    } else if (num >= 0){
+
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+}
+void is_armstrong (int num) {
+int last_num,sum,
+last_num = num % 10
+while (num > 1){
+
+}
+}

@@ -61,38 +61,72 @@ In (B) use a function is_magical which receives a positive integer n and returns
 //Answer :
 
 
-void is_armstrong (int num);
-void is_magical (int num)
+int is_armstrong(int num);
+int is_magical(int num);
 
-int main () {
-int num;
-while (1){
-    printf("please insert a positive integer or insert -1 if you want to exit : /n");
-    scanf("%d", &num);
-    if (num == -1) {
-        break;
-    } else if (num >= 0){
+int main() {
+    int num;
+    while (1) {
+        printf("please insert a positive integer or insert -1 if you want to exit:\n");
+        scanf("%d", &num);
+        if (num == -1) {
+            break;
+        } else if (num >= 0) {
+            if (is_armstrong(num)) {
+                printf("%d is an Armstrong number.\n", num);
+            } else if (is_magical(num)) {
+                printf("%d is a Magical number.\n", num);
+            } else {
+                printf("%d is neither an Armstrong nor a Magical number.\n", num);
+            }
+        }
+    }
+    return 0;
+}
 
+int is_armstrong(int num) {
+    int last_num, sum, new_mod, powerd_num;
+    int original_num = num;
+    sum = 0;
 
-
+    int temp_num = num;
+    int n = 0;
+    while (temp_num > 0) {
+        temp_num /= 10;
+        n++;
     }
 
+    while (num > 0) {
+        new_mod = num % 10;
+        num = num / 10;
+        powerd_num = pow(new_mod, n);
+        sum = sum + powerd_num;
+    }
+
+    if (sum == original_num) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 
+int is_magical(int num) {
+    int sum, new_mod;
 
+    while (num >= 10) {
+        sum = 0;
+        while (num > 0) {
+            new_mod = num % 10;
+            num = num / 10;
+            sum = sum + new_mod;
+        }
+        num = sum;
+    }
 
-
-
-
-
-
-
-}
-void is_armstrong (int num) {
-int last_num,sum,
-last_num = num % 10
-while (num > 1){
-
-}
+    if (num == 1) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
